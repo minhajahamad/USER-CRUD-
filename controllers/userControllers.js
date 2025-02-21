@@ -22,7 +22,7 @@ module.exports.postUser = async (req, res) => {
 module.exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const { body } = req.body;
+    const body = req.body;
     const dbResponse = await User.findByIdAndUpdate(id, body);
     res.status(200).json({ message: 'User Updated succesfully' });
   } catch (e) {
